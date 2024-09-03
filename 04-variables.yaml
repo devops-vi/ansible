@@ -1,0 +1,10 @@
+- name: Practice variables in yaml
+  hosts: web
+  vars:
+    COURSE: "DevOps with AWS"
+    DURATION: "120 Hours"
+    TRAINER: "Siva"
+  tasks:
+  - name: Print variables
+    ansible.builtin.debug:
+      msg: "Hi, I am learning {{COURSE}}, Duration: {{DURATION}}, Trainer: {{TRAINER}}"
