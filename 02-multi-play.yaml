@@ -1,4 +1,4 @@
-- name: Sample multiplay playbook
+- name: Sample multi play playbook
   hosts: web
   tasks:
     - name: Task 01 Play 01
