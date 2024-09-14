@@ -1,0 +1,6 @@
+- name: Printing variables from command line arguments
+  hosts: local
+  tasks:
+  - name: Print command line argument variables
+    ansible.builtin.debug:
+      msg: "Hi, I am learning {{ COURSE }} from Trainer {{ TRAINER }} and course duration is {{ DURATION }} Hours"
