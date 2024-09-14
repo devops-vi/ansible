@@ -8,11 +8,11 @@
   - name: Verify if the number is greater than 10
     ansible.builtin.debug:
       msg: "Given number {{ My_number }} is greater than 10"
-    when: My_number > 10
+    when: My_number | int > 10
     ignore_errors: True
 
   - name: Verify if the number is less than 10
     ansible.builtin.debug:
-      msg: "Given number {{ My_number }} is greater than 10"
-    when: My_number < 10
+      msg: "Given number {{ My_number }} is less than 10"
+    when: My_number | int < 10
     ignore_errors: True
