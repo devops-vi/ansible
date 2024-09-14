@@ -1,4 +1,5 @@
 - name: Playbook to check if user is exist or not, if not exist then add user
+  become: yes
   hosts: local
   tasks:
   - name: Check if User is exist or not
