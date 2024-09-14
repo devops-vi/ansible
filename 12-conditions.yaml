@@ -1,0 +1,9 @@
+- name: Conditions in Ansible
+  hosts: local
+  vars:
+    My_number: 139
+  tasks:
+  - name: Verify if the number is greater than 10
+    ansible.builtin.debug:
+      msg: "Given number {{ My_number }} is greater than 10"
+    when: My_number > 10
