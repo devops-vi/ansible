@@ -10,4 +10,6 @@
       ansible.builtin.copy:
         content: "{{ ansible_facts | to_nice_json }}"
         dest: /home/ec2-user/ansible/facts.json
-        mode: '0777'
+        owner: ec2-user
+        group: ec2-user
+        mode: '0644'
