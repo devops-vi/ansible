@@ -9,5 +9,5 @@
     - name: Gather facts ans store data
       ansible.builtin.copy:
         content: "{{ ansible_facts | to_nice_json }}"
-        dest: facts.json
-        mode: '0644'
+        dest: ./facts.json
+        mode: '0777'
