@@ -1,0 +1,19 @@
+- name: Install Nginx, Choose the task based on OS type
+  hosts: local
+  become: yes
+  tasks:
+  - name: Check for the OS
+    ansible.builtin.debug:
+      msg: "{{ ansible_facts }}"
+
+  - name: Install nginx if the OS is RedHat
+    ansible.builtin.dnf:
+      name: nginx
+      state: present
+    when: ansible_os_family == "RedHat"
+
+  - name: Install Nginx on Debian
+    ansible.builtin.apt:
+      name: nginx
+      state: present
+    when: ansible_os_family == "Debian"
