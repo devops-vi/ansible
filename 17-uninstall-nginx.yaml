@@ -1,0 +1,9 @@
+- name: unistall Nginx, Choose the task based on OS type
+  hosts: local
+  become: yes
+  tasks:
+  - name: Install nginx if the OS is RedHat
+    ansible.builtin.dnf:
+      name: nginx
+      state: absent
+    when: ansible_os_family == "RedHat"
