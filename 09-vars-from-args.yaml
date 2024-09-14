@@ -1,3 +1,4 @@
+#  ansible-playbook -i inventory.ini 09-vars-from-args.yaml -e "COURSE='DevOps with AWS' DURATION=120 TRAINER='Siva Kumar'"
 - name: Printing variables from command line arguments
   hosts: local
   tasks:
