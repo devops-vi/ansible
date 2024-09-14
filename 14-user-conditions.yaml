@@ -1,0 +1,15 @@
+- name: Playbook to check if user is exist or not, if not exist then add user
+  hosts: local
+  tasks:
+  - name: Check if User is exist or not
+    ansible.builtin.command: id expense
+    register: USER # To store the command output
+    ignore_errors: True
+
+  - name: Print the USER information
+    ansible.builtin.debug:
+      msg: {{ USER }}
+
+  - name: Add the user if not exist
+    ansible.builtin.command: useradd expense
+    when: USER.rc != 0
