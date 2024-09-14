@@ -7,7 +7,7 @@
       name: "{{ item.name }}"
       state: "{{ item.state }}"
     loop: # mention package names
-      - { name: 'nginx', state: 'present'}
+      - { name: 'nginx', state: 'absent'}
       - { name: 'mysql', state: 'absent'}
       - { name: 'postfix', state: 'absent'}
-      - { name: 'httpd', state: 'present'}
+      - { name: 'httpd', state: 'absent'}
