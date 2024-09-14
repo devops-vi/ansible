@@ -1,0 +1,12 @@
+- name: Gather facts and write the output to a file
+  hosts: local
+  become: yes
+  tasks:
+    - name: Gather facts
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts }}"
+    
+    - name: Gather facts
+      ansible.builtin.copy:
+      content: "{{ ansible_facts | to_nice_json }}"
+      dest: ./facts.json
