@@ -2,7 +2,7 @@
   hosts: local
   become: yes
   tasks:
-  - name: Install nginx if the OS is RedHat
+  - name: Uninstall nginx if the OS is RedHat
     ansible.builtin.dnf:
       name: nginx
       state: absent
